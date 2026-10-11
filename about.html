@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About Us | Parth Plast &amp; Fabrication</title>
+  <link rel="icon" href="Images/logo.png">
+  <style>
+    :root {
+      --navy: #0b2a5c;
+      --navy-dark: #071a3d;
+      --navy-mid: #153a76;
+      --orange: #f7810f;
+      --paper: #f6f7fa;
+      --ink: #16202b;
+      --line: #e2e6ea;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    html {
+      scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px));
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .sf {
+      font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    }
+
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* header */
+
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding-top: env(safe-area-inset-top, 0px);
+      transition: box-shadow .3s;
+    }
+
+    .top.sh {
+      box-shadow: 0 8px 24px rgba(7, 26, 61, .35);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand i {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px rgba(247, 129, 15, .25);
+      flex: none;
+    }
+
+    .nl {
+      display: flex;
+      gap: 28px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .nl a {
+      opacity: .85;
+      position: relative;
+      padding: 4px 0;
+      text-decoration: none;
+      border-bottom: none;
+    }
+
+    .nl a:hover,
+    .nl a.on {
+      opacity: 1;
+    }
+
+    /* Home tab underline removed */
+
+    .nl a.on::after {
+      display: none;
+      content: none;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .pill {
+      background: var(--orange);
+      color: #000;
+      padding: 11px 22px;
+      border-radius: 30px;
+      font-size: .85rem;
+      font-weight: 700;
+      transition: transform .2s, box-shadow .2s;
+      display: inline-block;
+    }
+
+    .pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(247, 129, 15, .45);
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 26px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .burger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #0B2A5C;
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .top.open .burger span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .top.open .burger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .top.open .burger span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mnav {
+      display: none;
+      flex-direction: column;
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .top.open .mnav {
+      display: flex;
+    }
+
+    .mnav a {
+      padding: 16px 24px;
+      font-size: .95rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .mnav a.on {
+      color: var(--orange);
+    }
+
+    .mnav .pill {
+      margin: 16px 24px 20px;
+      text-align: center;
+    }
+
+    /* hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0 90px;
+      background: #fff;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 48%;
+      background: linear-gradient(160deg, var(--navy-mid), var(--navy) 60%, var(--navy-dark));
+      clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .big {
+      position: absolute;
+      left: -10px;
+      bottom: -40px;
+      font-size: 15rem;
+      font-weight: 900;
+      letter-spacing: -6px;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(11, 42, 92, .09);
+      font-family: Georgia, serif;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(247, 129, 15, .22), transparent 65%);
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: left .25s ease-out, top .25s ease-out;
+    }
+
+    .hg {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 34px;
+      height: 2px;
+      background: var(--orange);
+      animation: grow 1s ease both;
+    }
+
+    @keyframes grow {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 34px
+      }
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 3.1rem;
+      line-height: 1.1;
+      color: var(--navy-dark);
+      font-weight: 700;
+    }
+
+    .ln {
+      display: block;
+      overflow: hidden;
+      padding-bottom: .08em;
+    }
+
+    .ln>span {
+      display: block;
+      transform: translateY(110%);
+      animation: lnup .9s cubic-bezier(.2, .8, .2, 1) forwards;
+    }
+
+    .ln:nth-child(1)>span {
+      animation-delay: .15s
+    }
+
+    .ln:nth-child(2)>span {
+      animation-delay: .3s
+    }
+
+    .ln:nth-child(3)>span {
+      animation-delay: .45s
+    }
+
+    @keyframes lnup {
+      to {
+        transform: none
+      }
+    }
+
+    h1 em {
+      color: var(--orange);
+      font-style: italic;
+    }
+
+    .lead {
+      margin-top: 22px;
+      max-width: 500px;
+      color: #4b5563;
+      font-size: 1.05rem;
+      animation: fade .9s ease .8s both;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(14px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .facts {
+      display: flex;
+      gap: 26px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      animation: fade .9s ease 1s both;
+    }
+
+    .facts span {
+      border-left: 3px solid var(--orange);
+      padding-left: 12px;
+      font-size: .78rem;
+      color: #6b7280;
+      line-height: 1.35;
+    }
+
+    .facts b {
+      display: block;
+      color: var(--navy-dark);
+      font-size: .95rem;
+    }
+
+    .col {
+      position: relative;
+      height: 450px;
+      animation: fade 1s ease .5s both;
+    }
+
+    .c1 {
+      position: absolute;
+      right: 0;
+      top: 10px;
+      width: 90%;
+      border-radius: 14px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, .4);
+      transform: rotate(2.5deg);
+      animation: bob 7s ease-in-out infinite;
+    }
+
+    .c2 {
+      position: absolute;
+      left: -3%;
+      bottom: 0;
+      width: 50%;
+      border: 6px solid #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 44px rgba(0, 0, 0, .35);
+      transform: rotate(-4deg);
+      animation: bob 6s ease-in-out -2s infinite;
+    }
+
+    .badge {
+      position: absolute;
+      right: -6px;
+      bottom: 22px;
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 800;
+      font-size: .74rem;
+      letter-spacing: 1px;
+      line-height: 1.25;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, .35);
+      animation: bob 4.5s ease-in-out -1s infinite;
+    }
+
+    .badge::before {
+      content: '';
+      position: absolute;
+      inset: -9px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255, 255, 255, .7);
+      animation: spin 18s linear infinite;
+    }
+
+    @keyframes bob {
+
+      0%,
+      100% {
+        translate: 0 0
+      }
+
+      50% {
+        translate: 0 -12px
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    section {
+      padding: 92px 0;
+      position: relative;
+    }
+
+    .num {
+      font-family: Georgia, serif;
+      font-size: .95rem;
+      color: var(--orange);
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 2.3rem;
+      line-height: 1.18;
+      color: var(--navy-dark);
+      font-weight: 700;
+    }
+
+    h2 em {
+      color: var(--orange);
+    }
+
+    .hd {
+      max-width: 680px;
+      margin-bottom: 46px;
+    }
+
+    .hd p {
+      margin-top: 14px;
+      color: #5b6472;
+    }
+
+    /* glance */
+    .g2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .g2 p {
+      color: #4b5563;
+      margin-top: 16px;
+    }
+
+    .sheet {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 16px;
+      padding: 14px 30px;
+      box-shadow: 0 26px 54px rgba(11, 42, 92, .28);
+    }
+
+    .row {
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity .6s, transform .6s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .row:last-child {
+      border: 0;
+    }
+
+    .sheet.in .row {
+      opacity: 1;
+      transform: none;
+    }
+
+    .row span {
+      color: #9fb0cc;
+      font-size: .82rem;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      flex: none;
+    }
+
+    .row b {
+      text-align: right;
+      font-size: .95rem;
+    }
+
+    /* materials */
+    .soft {
+      background: var(--paper);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      position: relative;
+      border-bottom: 2px solid var(--line);
+      overflow-x: auto;
+    }
+
+    .tb {
+      background: none;
+      border: 0;
+      padding: 14px 22px;
+      font: 700 .95rem 'Helvetica Neue', Arial, sans-serif;
+      color: #6b7280;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .2s;
+    }
+
+    .tb.on,
+    .tb:hover {
+      color: var(--navy);
+    }
+
+    .ti {
+      position: absolute;
+      bottom: -2px;
+      height: 3px;
+      background: var(--orange);
+      transition: left .35s ease, width .35s ease;
+    }
+
+    .mp {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: center;
+      padding: 44px 0 6px;
+      animation: fade .5s ease both;
+    }
+
+    .mp h3 {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--navy-dark);
+      margin-bottom: 12px;
+    }
+
+    .mp p {
+      color: #4b5563;
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 34px 26px;
+      text-align: center;
+      border-top: 5px solid var(--orange);
+      box-shadow: 0 16px 36px rgba(11, 42, 92, .08);
+    }
+
+    .stat b {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 2.5rem;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+
+    .stat span {
+      font-size: .85rem;
+      color: #6b7280;
+    }
+
+    /* statement */
+    .stmt {
+      background: var(--navy-dark);
+      color: #fff;
+      padding: 130px 0;
+      clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+      margin: -36px 0;
+    }
+
+    .stmt p {
+      font-family: Georgia, serif;
+      font-size: 2.3rem;
+      line-height: 1.38;
+      max-width: 920px;
+    }
+
+    .wd {
+      opacity: .18;
+      transition: opacity .35s, color .35s;
+    }
+
+    .wd.lit {
+      opacity: 1;
+    }
+
+    .wd.or.lit {
+      color: var(--orange);
+    }
+
+    /* accordion */
+    .ai {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .ah {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      background: none;
+      border: 0;
+      padding: 26px 4px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .an {
+      font-family: Georgia, serif;
+      color: var(--orange);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .at {
+      font-family: Georgia, serif;
+      font-size: 1.55rem;
+      color: var(--navy-dark);
+      flex: 1;
+      transition: transform .3s, color .3s;
+    }
+
+    .ah:hover .at {
+      transform: translateX(8px);
+      color: var(--navy);
+    }
+
+    .ap {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+      position: relative;
+      flex: none;
+      transition: transform .4s, background .3s, border-color .3s;
+    }
+
+    .ap::before,
+    .ap::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background: var(--navy);
+      transition: background .3s;
+    }
+
+    .ap::before {
+      width: 14px;
+      height: 2px;
+      margin: -1px 0 0 -7px;
+    }
+
+    .ap::after {
+      width: 2px;
+      height: 14px;
+      margin: -7px 0 0 -1px;
+    }
+
+    .ai.open .ap {
+      transform: rotate(135deg);
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .ai.open .ap::before,
+    .ai.open .ap::after {
+      background: #fff;
+    }
+
+    .ab {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .55s ease;
+    }
+
+    .ai.open .ab {
+      grid-template-rows: 1fr;
+    }
+
+    .abi {
+      overflow: hidden;
+    }
+
+    .ax {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+      padding: 6px 4px 34px;
+    }
+
+    .ax img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path .9s cubic-bezier(.7, 0, .2, 1) .15s;
+      box-shadow: 0 18px 40px rgba(11, 42, 92, .2);
+    }
+
+    .ai.open .ax img {
+      clip-path: inset(0 0 0 0);
+    }
+
+    .ax p {
+      color: #4b5563;
+    }
+
+    .ax ul {
+      margin-top: 14px;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ax li {
+      background: #fdeee0;
+      color: #b85c00;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    /* industries */
+    .dk {
+      background: var(--navy-dark);
+      color: #fff;
+    }
+
+    .dk h2 {
+      color: #fff;
+    }
+
+    .dk .hd p {
+      color: #aab5c4;
+    }
+
+    .ind {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 40px;
+    }
+
+    .il {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .ib {
+      background: none;
+      border: 0;
+      border-left: 3px solid rgba(255, 255, 255, .14);
+      color: #aab5c4;
+      text-align: left;
+      padding: 12px 18px;
+      font: 600 .92rem 'Helvetica Neue', Arial, sans-serif;
+      cursor: pointer;
+      transition: all .25s;
+    }
+
+    .ib:hover {
+      color: #fff;
+      padding-left: 26px;
+    }
+
+    .ib.on {
+      color: #fff;
+      border-color: var(--orange);
+      background: linear-gradient(90deg, rgba(247, 129, 15, .2), transparent);
+      padding-left: 26px;
+    }
+
+    .ip {
+      background: linear-gradient(140deg, var(--navy-mid), var(--navy));
+      border-radius: 18px;
+      padding: 40px;
+      min-height: 380px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ip .bn {
+      position: absolute;
+      right: 24px;
+      top: -6px;
+      font-family: Georgia, serif;
+      font-size: 9rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, .06);
+      line-height: 1;
+    }
+
+    .ip h3 {
+      font-family: Georgia, serif;
+      font-size: 1.9rem;
+      margin-bottom: 6px;
+      position: relative;
+    }
+
+    .ip small {
+      color: #ffd9ae;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      position: relative;
+    }
+
+    .ip ul {
+      list-style: none;
+      margin-top: 26px;
+      display: grid;
+      gap: 12px;
+      position: relative;
+    }
+
+    .ip li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1.02rem;
+      animation: li .55s cubic-bezier(.2, .8, .2, 1) both;
+      animation-delay: calc(var(--i)*80ms);
+    }
+
+    .ip li::before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/14px no-repeat;
+      flex: none;
+    }
+
+    @keyframes li {
+      from {
+        opacity: 0;
+        transform: translateX(-24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    /* gallery */
+    .gal {
+      padding: 92px 0;
+      overflow: hidden;
+    }
+
+    .gr {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      margin-top: 18px;
+    }
+
+    .gr.a {
+      animation: mql 46s linear infinite;
+    }
+
+    .gr.b {
+      animation: mqr 52s linear infinite;
+    }
+
+    .gal:hover .gr {
+      animation-play-state: paused;
+    }
+
+    .gr img {
+      width: 330px;
+      height: 216px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex: none;
+      transition: transform .4s, box-shadow .4s;
+    }
+
+    .gr img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 18px 40px rgba(11, 42, 92, .3);
+    }
+
+    @keyframes mql {
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    @keyframes mqr {
+      from {
+        transform: translateX(-50%)
+      }
+
+      to {
+        transform: none
+      }
+    }
+
+    /* contact */
+    .cbox {
+      background: var(--paper);
+      border-radius: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      box-shadow: 0 26px 60px rgba(11, 42, 92, .14);
+    }
+
+    .cl {
+      background: var(--navy);
+      color: #fff;
+      padding: 46px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cl::after {
+      content: '';
+      position: absolute;
+      right: -70px;
+      bottom: -70px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(247, 129, 15, .28);
+    }
+
+    .cl h2 {
+      color: #fff;
+      font-size: 1.9rem;
+    }
+
+    .cl p {
+      color: #c3ccd9;
+      margin-top: 10px;
+      font-size: .92rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cl .it {
+      margin-top: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cl .it small {
+      display: block;
+      color: var(--orange);
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      font-size: .72rem;
+    }
+
+    .cl .it a,
+    .cl .it div {
+      font-size: 1.02rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    .cl .it a:hover {
+      color: var(--orange);
+    }
+
+    .cr {
+      padding: 46px 40px;
+    }
+
+    .cr h3 {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--navy-dark);
+      margin-bottom: 18px;
+    }
+
+    .f {
+      display: block;
+      width: 100%;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      padding: 13px 16px;
+      font: inherit;
+      margin-bottom: 12px;
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .f:focus {
+      outline: 0;
+      border-color: var(--orange);
+      box-shadow: 0 0 0 4px rgba(247, 129, 15, .18);
+    }
+
+    .note {
+      font-size: .78rem;
+      color: #6b7280;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: var(--navy-dark);
+      color: #aab5c4;
+      padding: 50px 0 calc(28px + env(safe-area-inset-bottom, 0px));
+      font-size: .87rem;
+      margin-top: 0;
+    }
+
+    .ft {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .ft nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    .ft a:hover {
+      color: var(--orange);
+    }
+
+    /* reveal */
+    [data-r] {
+      opacity: 0;
+      transition: opacity .85s ease, transform .85s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    [data-r=up] {
+      transform: translateY(44px);
+    }
+
+    [data-r=left] {
+      transform: translateX(-60px);
+    }
+
+    [data-r=right] {
+      transform: translateX(60px);
+    }
+
+    [data-r=zoom] {
+      transform: scale(.88);
+    }
+
+    [data-r].in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* dots */
+    .dots {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 30;
+    }
+
+    .dots a {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+      background: #fff;
+      position: relative;
+      transition: transform .25s, background .25s, border-color .25s;
+    }
+
+    .dots a.on {
+      background: var(--orange);
+      border-color: var(--orange);
+      transform: scale(1.4);
+    }
+
+    .dots a::after {
+      content: attr(data-l);
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy-dark);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+
+    .dots a:hover::after {
+      opacity: 1;
+    }
+
+    @media(max-width:1100px) {
+      .dots {
+        display: none;
+      }
+    }
+
+    @media(max-width:900px) {
+      .hero::before {
+        display: none;
+      }
+
+      .hg,
+      .g2,
+      .mp,
+      .ax,
+      .ind,
+      .cbox {
+        grid-template-columns: 1fr;
+      }
+
+      .hg>div:last-child {
+        background: var(--navy);
+        border-radius: 16px;
+        padding: 26px 26px 34px;
+      }
+
+      .col {
+        height: 340px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .stmt p {
+        font-size: 1.5rem;
+      }
+
+      .big {
+        font-size: 8rem;
+      }
+
+      .nl {
+        display: none;
+      }
+
+      .il {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+
+      .ib {
+        border-left: 0;
+        border-bottom: 3px solid rgba(255, 255, 255, .14);
+        white-space: nowrap;
+      }
+
+      .ib.on {
+        border-color: var(--orange);
+      }
+
+      .ip {
+        padding: 28px;
+        min-height: 0;
+      }
+
+      .at {
+        font-size: 1.2rem;
+      }
+
+      .cl,
+      .cr {
+        padding: 32px 26px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      [data-r],
+      .row {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .ln>span {
+        transform: none !important;
+      }
+
+      .ax img {
+        clip-path: none !important;
+      }
+
+      .wd {
+        opacity: 1 !important;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 26px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .burger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #0B2A5C;
+      border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .top.open .burger span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .top.open .burger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .top.open .burger span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mnav {
+      display: none;
+      flex-direction: column;
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .top.open .mnav {
+      display: flex;
+    }
+
+    .mnav a {
+      padding: 16px 24px;
+      font-size: .95rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      color: #fff;
+    }
+
+    .mnav a.on {
+      color: var(--orange);
+    }
+
+    .mnav .pill {
+      margin: 16px 24px 20px;
+      text-align: center;
+    }
+
+    @media(max-width:900px) {
+      .nl {
+        display: none;
+      }
+
+      .right .pill {
+        display: none;
+      }
+
+      .burger {
+        display: flex;
+      }
+    }
+
+    .fg {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    .fg h4 {
+      color: #fff;
+      font-size: .85rem;
+      margin-bottom: 12px;
+    }
+
+    .fg a {
+      display: block;
+      margin-bottom: 7px;
+      color: #aab5c4;
+    }
+
+    .fg a:hover {
+      color: var(--orange);
+    }
+
+    .fb {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: .78rem;
+      color: #7c8695;
+    }
+
+    @media(max-width:900px) {
+      .fg {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:560px) {
+      .fg {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dots" id="dots"></div>
+  <header class="top" id="top">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><img src="Images/logo.png" style="height: 50px;" alt=""></a>
+      <nav class="nl"><a class="on" href="index.html" style="color: #0B2A5C;">Home</a><a href="about.html"
+          style="color: #0B2A5C;">About</a><a href="products.html" style="color: #0B2A5C;">Products</a><a
+          href="industries.html" style="color: #0B2A5C;">Industries</a><a href="contact.html"
+          style="color: #0B2A5C;">Contact</a></nav>
+      <div class="right"><a class="pill" href="contact.html">Get a Quote</a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mnav" id="mnav"><a href="index.html">Home</a><a class="oN" href="about.html">About</a><a
+        href="products.html">Products</a><a href="industries.html">Industries</a><a href="contact.html">Contact</a><a
+        class="pill" href="contact.html">Get a Quote</a></nav>
+  </header>
+
+  <section class="hero" style="border-top: 1px solid #0B2A5C;" id="s0" data-l="Top">
+    <div class="glow" id="glow"></div>
+    <div class="big" id="big">PARTH</div>
+    <div class="wrap hg">
+      <div>
+        <div class="eyebrow">ABOUT US</div>
+        <h1><span class="ln"><span>Corrosion-proof</span></span><span class="ln"><span>plastic &amp; fibre
+              <em>equipment,</em></span></span><span class="ln"><span>built to order.</span></span></h1>
+        <p class="lead">Parth Plast &amp; Fabrication is an Ahmedabad manufacturer of HDPE, PP and PPFRP industrial
+          solutions &mdash; the tanks, vessels and scrubbing systems that handle the chemicals other materials
+          can&rsquo;t.</p>
+        <div class="facts"><span><b>HDPE &middot; PP &middot; PPFRP</b>materials</span><span><b>300&ndash;4500
+              mm</b>internal diameter</span><span><b>Vatva GIDC</b>Ahmedabad</span></div>
+      </div>
+      <div>
+        <div class="col" id="col">
+          <img class="c1" data-k="storage_hi" alt="Parth spiral storage tanks"><img class="c2" data-k="dosing_hi"
+            alt="Reaction and dosing tank line">
+          <div class="badge">CUSTOM<br>BUILT</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s1" data-l="Profile">
+    <div class="wrap g2">
+      <div data-r="left"><span class="num">01 &mdash; COMPANY PROFILE</span>
+        <h2>Built around one problem: <em>corrosive</em> chemicals</h2>
+        <p>Our equipment is sold under the brand name &ldquo;Parth&rdquo;. It covers spiral chemical storage tanks,
+          reaction vessels, PPFRP storage tanks, blowers and scrubber systems.</p>
+        <p>Alongside that we make air pollution control systems &mdash; scrubbers, venturis, blowers, pickling tanks,
+          reaction vessels with stirrer &mdash; plus HDPE road tankers, pipe fittings and ball, foot and NRV valves.</p>
+      </div>
+      <div class="sheet" id="sheet">
+        <div class="row"><span>Brand</span><b>Parth</b></div>
+        <div class="row"><span>Materials</span><b>HDPE &middot; PP &middot; PPFRP &middot; FRP &middot; MSFRP</b></div>
+        <div class="row"><span>Tank capacity</span><b>Up to 105 kl (HDPE/PP)<br>Up to 200 kl (PPFRP/FRP)</b></div>
+        <div class="row"><span>Diameter</span><b>300 mm &ndash; 4500 mm</b></div>
+        <div class="row"><span>Temperature</span><b>HDPE &minus;40&deg;C to +90&deg;C<br>PP up to +110&deg;C</b></div>
+        <div class="row"><span>Works</span><b>Vatva GIDC, Ahmedabad</b></div>
+        <div class="row"><span>Contact</span><b>Ajit Darbar</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="s2" data-l="Materials">
+    <div class="wrap">
+      <div class="hd" data-r="up"><span class="num">02 &mdash; MATERIALS</span>
+        <h2>The materials we <em>fabricate</em> in</h2>
+      </div>
+      <div class="tabs" id="tabs"><span class="ti" id="ti"></span></div>
+      <div id="mp"></div>
+    </div>
+  </section>
+
+  <div class="stmt" id="s3">
+    <div class="wrap">
+      <p id="stp">Every Parth tank is custom built &mdash; sized to your chemical, your capacity and your layout. Leak
+        proof, corrosion resistant, light in weight and made to last.</p>
+    </div>
+  </div>
+
+  <section id="s4" data-l="Products">
+    <div class="wrap">
+      <div class="hd" data-r="up"><span class="num">03 &mdash; WHAT WE MAKE</span>
+        <h2>Six product families, <em>one</em> workshop</h2>
+      </div>
+      <div id="acc"></div>
+    </div>
+  </section>
+
+  <section class="dk" id="s5" data-l="Industries">
+    <div class="wrap">
+      <div class="hd" data-r="up"><span class="num">04 &mdash; APPLICATIONS</span>
+        <h2>Where you&rsquo;ll find Parth equipment</h2>
+        <p>Pick an industry to see the duties our tanks, vessels and systems are built for.</p>
+      </div>
+      <div class="ind" data-r="up">
+        <div class="il" id="il"></div>
+        <div class="ip" id="ip"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gal" id="s6" data-l="Gallery">
+    <div class="wrap">
+      <div class="hd" data-r="up" style="margin-bottom:10px"><span class="num">05 &mdash; SHOP FLOOR</span>
+        <h2>Made in Ahmedabad, <em>shipped</em> across industries</h2>
+      </div>
+    </div>
+    <div class="gr a" id="ga"></div>
+    <div class="gr b" id="gb"></div>
+  </section>
+
+  <section id="s7" data-l="Contact" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="cbox" data-r="zoom">
+        <div class="cl">
+          <h2>Let&rsquo;s size your tank</h2>
+          <p>Tell us the chemical, capacity and layout. We&rsquo;ll come back with the right construction.</p>
+          <div class="it"><small>CONTACT PERSON</small>
+            <div>Ajit Darbar</div>
+          </div>
+          <div class="it"><small>CALL</small><a href="tel:+919979021155">+91 99790 21155</a><a
+              href="tel:+919998739294">+91 99987 39294</a></div>
+          <div class="it"><small>EMAIL</small><a href="mailto:parthplast30@gmail.com">parthplast30@gmail.com</a></div>
+          <div class="it"><small>REGISTERED OFFICE</small>
+            <div style="font-weight:500;font-size:.92rem">Shed No: D-60, Maruti Industrial Estate, Vatva GIDC Road,
+              Hathijan Circle, Ahmedabad &ndash; 382445</div>
+          </div>
+          <div class="it"><small>FACTORY WORKS</small>
+            <div style="font-weight:500;font-size:.92rem">Survey No 576, Nr. Kesarinandan Hotel, B/h. Tata Motor,
+              LalGebi Circle, Hathijan, Ahmedabad &ndash; 382 445</div>
+            <a href="https://maps.app.goo.gl/Qt4jjXJBGizC4SMN6" target="_blank" rel="noopener"
+              style="color:var(--orange);margin-top:8px;font-size:.9rem">Get directions &rarr;</a>
+          </div>
+        </div>
+        <div class="cr">
+          <h3>Send an enquiry</h3>
+          <input class="f" id="fn" placeholder="Your name"><input class="f" id="fc" placeholder="Company"><input
+            class="f" id="fp" placeholder="Phone number">
+          <textarea class="f" id="fr" rows="4"
+            placeholder="Chemical, capacity (kl), diameter, quantity&hellip;"></textarea>
+          <button class="pill" type="button" id="send" style="width:100%;padding:15px">Send enquiry &rarr;</button>
+          <p class="note" id="nt">Opens your email app with the enquiry filled in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap fg">
+      <div>
+        <h4>PARTH PLAST &amp; FABRICATION</h4>
+        <p style="margin:0 0 6px">Custom built HDPE / PP / PPFRP solutions for your industry.</p>
+      </div>
+      <div>
+        <h4>Explore</h4><a href="about.html">About Us</a><a href="products.html">Products</a><a
+          href="industries.html">Industries</a><a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p style="margin:0 0 6px">Ajit Darbar</p>
+        <p style="margin:0 0 6px">+91 99790 21155</p>
+        <p>+91 99987 39294</p>
+        <p style="margin:0">parthplast30@gmail.com</p>
+      </div>
+      <div>
+        <h4>Works</h4>
+        <p style="margin:0">Shed D-60, Maruti Industrial Estate, Vatva GIDC, Ahmedabad &ndash; 382445</p>
+      </div>
+    </div>
+    <div class="wrap fb"><span>&copy; Parth Plast &amp; Fabrication</span><span>HDPE &middot; PP &middot; PPFRP &middot;
+        FRP &middot; MSFRP</span></div>
+  </footer>
+  <script src="JS/abtimgjs.js"></script>
+  <script>(function () {
+      var _top = document.getElementById('top'); if (_top) { document.getElementById('burger').onclick = function () { _top.classList.toggle('open') };[].slice.call(document.querySelectorAll('.mnav a')).forEach(function (a) { a.addEventListener('click', function () { _top.classList.remove('open') }) }); }
+    })();
+    (function () {
+      var $ = function (s, c) { return (c || document).querySelector(s) }, $$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)) };
+      $$('img[data-k]').forEach(function (i) { i.src = IM[i.getAttribute('data-k')] });
+      var top = $('#top'); addEventListener('scroll', function () {
+        top.classList.toggle('sh', scrollY > 10);
+        $('#big').style.transform = 'translateY(' + (-scrollY * .12) + 'px)'; $('#col').style.transform = 'translateY(' + (scrollY * .05) + 'px)';
+      }, { passive: true });
+      var hero = $('.hero'); hero.addEventListener('mousemove', function (e) { var r = hero.getBoundingClientRect(), g = $('#glow'); g.style.left = (e.clientX - r.left) + 'px'; g.style.top = (e.clientY - r.top) + 'px' });
+      /* materials */
+      var MAT = [["HDPE", "HDPE spiral tanks &amp; vessels", "Spiral-wound HDPE tanks, reaction vessels, scrubbers and road tankers. Good corrosion and weathering resistance, high impact strength, UV resistant for outdoor installation.", "&minus;40 to +90&deg;C", "service temperature"],
+      ["Polypropylene", "PP spiral tanks &amp; vessels", "Where the process runs hotter, PP takes over &mdash; the same leak-proof spiral construction for storage, reaction and scrubbing duty at higher temperature.", "up to +110&deg;C", "service temperature"],
+      ["PPFRP &amp; FRP", "Fibre-reinforced construction", "Large-capacity chemical storage tanks plus fumes extraction systems, scrubbers, blowers and venturis in PPFRP and MSFRP.", "200 kl", "maximum tank capacity"],
+      ["MS + Lining", "Lined steel fabrication", "Mild-steel fabrication with rubber lining or HDPE spiral sheet lining &mdash; used for stirrers and chemical transportation tankers.", "4 types", "of stirrer: pedestal, propeller, anchor, pin-bush"]];
+      var tabs = $('#tabs'), ti = $('#ti'), mp = $('#mp');
+      MAT.forEach(function (m, i) { var b = document.createElement('button'); b.className = 'tb'; b.innerHTML = m[0]; b.onclick = function () { setMat(i) }; tabs.insertBefore(b, ti) });
+      function setMat(i) {
+        $$('.tb').forEach(function (b, j) { b.classList.toggle('on', i == j) }); var b = $$('.tb')[i]; ti.style.left = b.offsetLeft + 'px'; ti.style.width = b.offsetWidth + 'px';
+        var m = MAT[i]; mp.innerHTML = '<div class="mp"><div><h3>' + m[1] + '</h3><p>' + m[2] + '</p></div><div class="stat"><b>' + m[3] + '</b><span>' + m[4] + '</span></div></div>'
+      }
+      setMat(0); addEventListener('load', function () { setMat(0) }); addEventListener('resize', function () { setMat($$('.tb').findIndex(function (b) { return b.classList.contains('on') })) });
+      /* statement word lighting */
+      var sp = $('#stp'), kw = ['custom', 'built', 'leak', 'proof,', 'corrosion', 'resistant,'];
+      sp.innerHTML = sp.textContent.split(' ').map(function (w) { return '<span class="wd' + (kw.indexOf(w.toLowerCase()) > -1 ? ' or' : '') + '">' + w + '</span>' }).join(' ');
+      var wds = $$('.wd'); function lit() { var r = sp.getBoundingClientRect(), vh = innerHeight, p = Math.max(0, Math.min(1, (vh * .85 - r.top) / (r.height + vh * .3))), n = Math.floor(p * wds.length * 1.05); wds.forEach(function (w, i) { w.classList.toggle('lit', i < n) }) }
+      addEventListener('scroll', lit, { passive: true }); lit();
+      /* accordion */
+      var PR = [["Spiral Storage Tanks", "ppfrp_transport", "HDPE &amp; PP spiral tanks up to 105 kl and PPFRP / FRP tanks up to 200 kl, for highly corrosive chemicals, acid, slurry, water, ETP, STP and DM water.", ["Leak proof", "UV resistant", "Outdoor-safe"]],
+      ["Reaction Vessels &amp; Stirrers", "stirrer", "Spiral reaction vessels up to 105 kl, with pedestal, propeller, anchor or pin-bush stirrers in rubber or HDPE spiral sheet lining.", ["Up to 105 kl", "4 stirrer types", "Lined"]],
+      ["Scrubbing &amp; Fumes Extraction", "scrubber_system", "PPFRP and HDPE / PP spiral gas scrubbing and fumes extraction systems, with PPFRP / MSFRP blowers and venturis matched to the line.", ["Scrubbers", "Blowers", "Venturis"]],
+      ["Horizontal Tanks", "horizontal_tank", "HDPE spiral horizontal tanks on support saddles &mdash; a low-profile option where height or transport access is limited.", ["Spiral HDPE", "Saddle mounted"]],
+      ["Transportation Tankers", "transport_tanker", "MS and HDPE spiral chemical transportation tankers for road transport of corrosive liquids.", ["MS + HDPE", "Road tankers"]],
+      ["Process Tanks &amp; Skids", "dosing_hi", "Pickling tanks, ETP tanks and reaction / dosing tank lines for effluent treatment, water treatment and acid handling.", ["Pickling", "ETP", "Water treatment"]]];
+      var acc = $('#acc'); PR.forEach(function (p, i) {
+        var d = document.createElement('div'); d.className = 'ai' + (i == 0 ? ' open' : ''); d.setAttribute('data-r', 'up');
+        d.innerHTML = '<button class="ah"><span class="an">0' + (i + 1) + '</span><span class="at">' + p[0] + '</span><span class="ap"></span></button><div class="ab"><div class="abi"><div class="ax"><img data-k="' + p[1] + '" src="' + IM[p[1]] + '" alt=""><div><p>' + p[2] + '</p><ul>' + p[3].map(function (t) { return '<li>' + t + '</li>' }).join('') + '</ul></div></div></div></div>';
+        d.querySelector('.ah').onclick = function () { var o = d.classList.contains('open'); $$('.ai', acc).forEach(function (x) { x.classList.remove('open') }); if (!o) d.classList.add('open') }; acc.appendChild(d)
+      });
+      /* industries */
+      var IND = [["Chemicals", ["Chemical storage tanks", "Chemical reaction vessels", "Chemicals distribution", "Gas scrubbing system", "Air pollution control system"]],
+      ["Pharmaceuticals", ["Raw material tanks", "Raw material reaction vessels", "Liquid distribution", "Gas scrubbing system", "Air pollution control system"]],
+      ["Petrochemicals &amp; Refineries", ["Effluent treatment plant", "Chilling water", "Water distribution", "Acid storage tank", "D.M. plant"]],
+      ["Dyes &amp; Intermediates", ["Reaction vessel", "Acid storage tank", "Filter nutch", "Air pollution control system"]],
+      ["Thermal Power", ["Water management", "D.M. plant"]], ["Integrated Steel Plants", ["Water management", "Effluent treatment plant"]],
+      ["Rayon", ["Chemicals storage tank", "D.M. plant", "Effluent treatment plant", "Drainage line"]],
+      ["Fertilizer", ["Chemicals storage tank", "Water supply pipeline", "Effluent treatment plant"]],
+      ["Phosphoric Acid", ["Acid storage", "D.M. plant", "ETP plant"]], ["Dairy Food &amp; Beverages", ["Drainage system", "ETP plant", "Water management"]],
+      ["Copper Plants", ["ETP plant", "Chemical storage tank"]],
+      ["Pulp &amp; Paper", ["Acid &amp; caustic line", "Bleached pulp", "Chlorinated water &amp; wet chlorine", "Lime slurry &amp; mud", "Alum", "Chlorine dioxide"]]];
+      var il = $('#il'), ip = $('#ip'); IND.forEach(function (x, i) { var b = document.createElement('button'); b.className = 'ib'; b.innerHTML = x[0]; b.onclick = function () { setInd(i) }; il.appendChild(b) });
+      function setInd(i) {
+        $$('.ib').forEach(function (b, j) { b.classList.toggle('on', i == j) }); var x = IND[i];
+        ip.innerHTML = '<div class="bn">' + (i < 9 ? '0' : '') + (i + 1) + '</div><small>APPLICATIONS</small><h3>' + x[0] + '</h3><ul>' + x[1].map(function (t, k) { return '<li style="--i:' + k + '">' + t + '</li>' }).join('') + '</ul>'
+      }
+      setInd(0);
+      /* gallery */
+      function row(id, ks) { var r = $(id); r.innerHTML = ks.map(function (k) { return '<img src="' + IM[k] + '" alt="">' }).join(''); r.innerHTML += r.innerHTML }
+      row('#ga', ['hero_tank', 'storage_hi', 'ppfrp_transport', 'horizontal_tank', 'scrubber_system']); row('#gb', ['reaction_vessel', 'transport_tanker', 'stirrer', 'dosing_hi', 'spiral_tanks2']);
+      /* form */
+      $('#send').onclick = function () {
+        var b = 'Name: ' + $('#fn').value + '\nCompany: ' + $('#fc').value + '\nPhone: ' + $('#fp').value + '\n\nRequirement:\n' + $('#fr').value;
+        var a = document.createElement('a'); a.href = 'mailto:parthplast30@gmail.com?subject=' + encodeURIComponent('Enquiry from website') + '&body=' + encodeURIComponent(b); document.body.appendChild(a); a.click(); a.remove();
+        $('#nt').innerHTML = 'If your email app did not open, write to <b>parthplast30@gmail.com</b>.'
+      };
+      /* reveal */
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }) }, { threshold: .15 });
+      $$('[data-r],#sheet').forEach(function (el) { io.observe(el) });
+      $$('#sheet .row').forEach(function (r, i) { r.style.transitionDelay = (i * 110) + 'ms' });
+      /* dots + spy */
+      var secs = ['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7'], names = ['Top', 'Profile', 'Materials', 'Promise', 'Products', 'Industries', 'Gallery', 'Contact'], dots = $('#dots');
+      secs.forEach(function (id, i) { var a = document.createElement('a'); a.href = '#' + id; a.setAttribute('data-l', names[i]); dots.appendChild(a) });
+      function spy() { var c = 0; secs.forEach(function (id, i) { var e = document.getElementById(id); if (e.getBoundingClientRect().top <= innerHeight * .45) c = i }); $$('a', dots).forEach(function (a, i) { a.classList.toggle('on', i == c) }) }
+      addEventListener('scroll', spy, { passive: true }); spy();
+    })();
+  </script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+
+  <script>
+    // Initialize EmailJS
+    (function () {
+      emailjs.init({
+        publicKey: "2pv54okFrrLR259l6"
+      });
+    })();
+
+    const sendButton = document.getElementById("send");
+
+    if (sendButton) {
+      sendButton.addEventListener("click", function () {
+
+        const name = document.getElementById("fn").value.trim();
+        const company = document.getElementById("fc").value.trim();
+        const phone = document.getElementById("fp").value.trim();
+        const requirement = document.getElementById("fr").value.trim();
+
+        // Validation
+        if (!name || !phone || !requirement) {
+          alert("Please fill in all required details.");
+          return;
+        }
+
+        const originalButtonText = sendButton.innerHTML;
+
+        sendButton.disabled = true;
+        sendButton.innerHTML = "Sending Enquiry... ⏳";
+
+        // EmailJS Template Variables
+        const templateParams = {
+          name: name,
+          company: company || "Not provided",
+          phone: phone,
+          requirement: requirement
+        };
+
+        // Send Email
+        emailjs.send(
+          "service_t747cc7",
+          "template_fnicpat"
+          ,
+          templateParams
+        )
+          .then(function (response) {
+
+            console.log("Email sent successfully:", response);
+
+            alert(
+              "Thank you! Your enquiry has been sent successfully."
+            );
+
+            // Clear form
+            document.getElementById("fn").value = "";
+            document.getElementById("fc").value = "";
+            document.getElementById("fp").value = "";
+            document.getElementById("fr").value = "";
+
+            // Success message
+            const successMessage = document.getElementById("nt");
+
+            if (successMessage) {
+              successMessage.innerHTML =
+                "Your enquiry has been sent successfully. We will contact you shortly.";
+
+              successMessage.style.display = "block";
+            }
+
+          })
+          .catch(function (error) {
+
+            console.error("EmailJS Error:", error);
+
+            alert(
+              "Sorry, your enquiry could not be sent. Please try again."
+            );
+
+          })
+          .finally(function () {
+
+            sendButton.disabled = false;
+            sendButton.innerHTML = originalButtonText;
+
+          });
+      });
+    }
+  </script>
+
+</body>
+
+</html>
